@@ -34,10 +34,8 @@ namespace FirstFantasy_BonillaAndres
 
             Character myCharacter;
 
-            List<IDescribible> objectList = new List<IDescribible>();
-            objectList.Add(new Axe());
-            objectList.Add(new Potion());
-            objectList.Add(new Wizard { Level = 10});
+            
+            
 
             /*
             switch (option)

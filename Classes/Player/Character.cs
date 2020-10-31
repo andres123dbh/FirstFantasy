@@ -1,11 +1,12 @@
-﻿using FirstFantasy_BonillaAndres.Interfaces;
+﻿using FirstFantasy_BonillaAndres.Classes.Equipment;
+using FirstFantasy_BonillaAndres.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FirstFantasy_BonillaAndres.Classes.Player
 {
-    public abstract class Character : IDescribible
+    public abstract class Character : EquipmentPlayer , IDescribible
     {
         private String name;
         private int level;
@@ -29,6 +30,13 @@ namespace FirstFantasy_BonillaAndres.Classes.Player
         public string ShowInformation()
         {
             return "This is a level" + level;
+        }
+
+        public int Attack(List<Weapon> listEquipment)
+        {
+            var random = new Random();
+            int randomNumber = random.Next(1, 9);
+            return 1;
         }
     }
 }
