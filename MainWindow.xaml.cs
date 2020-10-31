@@ -34,7 +34,8 @@ namespace FirstFantasy_BonillaAndres
 
             Character myCharacter;
 
-            
+            Potion a = new Potion(2);
+            MessageBox.Show(a.Type + a.Use + a.Damage);
             
 
             /*

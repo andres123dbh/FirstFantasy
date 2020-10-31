@@ -36,7 +36,8 @@ namespace FirstFantasy_BonillaAndres.Classes.Player
         {
             var random = new Random();
             int randomNumber = random.Next(1, 9);
-            return 1;
+            int totalDamage = randomNumber + listEquipment[0].Damage;
+            return totalDamage;
         }
     }
 }

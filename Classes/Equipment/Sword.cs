@@ -6,10 +6,10 @@ namespace FirstFantasy_BonillaAndres.Classes.Equipment
 {
     class Sword : Weapon
     {
-        public Sword (int damage) : base(damage)
+        public Sword(int damage) : base(damage)
         {
-
+            Type = "Weapon-Sword";
+            Use = "Attack";
         }
-
     }
 }
