@@ -10,11 +10,12 @@ namespace FirstFantasy_BonillaAndres.Classes.Equipment
         private int damage;
         private string type;
         private string use;
+        private string name;
 
         public string Type { get => type; set => type = value; }
         public string Use { get => use; set => use = value; }
-
         public int Damage { get => damage; set => damage = value; }
+        public string Name { get => name; set => name = value; }
 
         public Weapon (int damage)
         {

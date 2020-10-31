@@ -8,6 +8,7 @@ namespace FirstFantasy_BonillaAndres.Classes.Equipment
     {
         public Potion(int damage) : base(damage)
         {
+            Name = "Potion of Heal";
             Type = "Potion";
             Use = "Heal";
         }

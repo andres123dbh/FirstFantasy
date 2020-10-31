@@ -4,13 +4,14 @@ using System.Text;
 
 namespace FirstFantasy_BonillaAndres.Classes.Equipment
 {
-    class Axe : Weapon
+    class Helmet : Weapon
     {
-        public Axe(int damage) : base(damage)
+        public Helmet(int damage) : base(damage)
         {
-            Name = "Axe";
-            Type = "Weapon";
-            Use = "Attack";
+            Name = "Helmet";
+            Type = "Amor";
+            Use = "Protect";
         }
+
     }
 }

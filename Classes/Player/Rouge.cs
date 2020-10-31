@@ -6,6 +6,10 @@ namespace FirstFantasy_BonillaAndres.Classes.Player
 {
     public class Rouge : Character
     {
+        public Rouge()
+        {
+            Type = "Rouge";
+        }
         public override String Taunt()
         {
             return "By Meeee";

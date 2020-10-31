@@ -8,14 +8,48 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBlock Name="txtOutput" HorizontalAlignment="Left" Height="247" Margin="438,119,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Background="#FFFFD3D3"/>
-        <ComboBox Name="CboxCharacter" HorizontalAlignment="Left" Margin="174,157,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox Name="CboxCharacter" HorizontalAlignment="Left" Margin="94,83,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Select a type" IsSelected="True"/>
             <ComboBoxItem Content="Cleric"/>
             <ComboBoxItem Content="Fighter"/>
             <ComboBoxItem Content="Rouge"/>
             <ComboBoxItem Content="Wizard"/>
         </ComboBox>
-        <Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="174,228,0,0" VerticalAlignment="Top" Width="120" Click="btnCreate_Click"/>
+        <Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="94,242,0,0" VerticalAlignment="Top" Width="120" Click="btnCreate_Click"/>
+        <TextBox Name="txtName" HorizontalAlignment="Left" Margin="94,51,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="47,45,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="CboxRace" HorizontalAlignment="Left" Margin="234,83,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Select a Race" IsSelected="True"/>
+            <ComboBoxItem Content="Dwarf"/>
+            <ComboBoxItem Content="Elf"/>
+            <ComboBoxItem Content="Hobbit"/>
+            <ComboBoxItem Content="Human"/>
+            <ComboBoxItem Content="Orc"/>
+        </ComboBox>
+        <Label Content="Inventory" HorizontalAlignment="Left" Margin="29,154,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="CboxWeapon" HorizontalAlignment="Left" Margin="94,116,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Select a Weapon" IsSelected="True"/>
+            <ComboBoxItem Content="Axe"/>
+            <ComboBoxItem Content="Sword"/>
+            <ComboBoxItem Content="Potion"/>
+            <ComboBoxItem Content="Staff"/>
+            <ComboBoxItem Content="knife"/>
+        </ComboBox>
+        <ComboBox Name="CboxAmor" HorizontalAlignment="Left" Margin="234,116,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Select a Armor" IsSelected="True"/>
+            <ComboBoxItem Content="Helmet"/>
+            <ComboBoxItem Content="Shirt"/>
+            <ComboBoxItem Content="Pant"/>
+        </ComboBox>
+        <CheckBox Name="checkAxe" Content="Axe" HorizontalAlignment="Left" Margin="98,160,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="checkKnife" Content="knife" HorizontalAlignment="Left" Margin="170,160,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="checkStaff" Content="Staff" HorizontalAlignment="Left" Margin="98,220,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="checkPotion" Content="Potion" HorizontalAlignment="Left" Margin="98,200,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="checkSword" Content="Sword" HorizontalAlignment="Left" Margin="98,180,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="checkPant" Content="Pant" HorizontalAlignment="Left" Margin="170,220,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="checkShirt" Content="Shirt" HorizontalAlignment="Left" Margin="170,200,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="checkHelmet" Content="Helmet" HorizontalAlignment="Left" Margin="170,180,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Window>

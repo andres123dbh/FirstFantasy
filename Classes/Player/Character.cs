@@ -12,19 +12,25 @@ namespace FirstFantasy_BonillaAndres.Classes.Player
         private int level;
         private int experience;
         private String race;
+        private String type;
 
-        enum Races { Dwarf, Elf, Hobbit, Human, Orc}
+        public enum Races { Dwarf, Elf, Hobbit, Human, Orc}
 
         public string Name { get => name; set => name = value; }
         public int Level { get => level; set => level = value; }
         public int Experience { get => experience; set => experience = value; }
         public string Race { get => race; set => race = value; }
+        public string Type { get => type; set => type = value; }
 
         public abstract String Taunt();
 
+
+
         public virtual String ShowCharacter()
         {
-            return "Name: " + name + " Level: " + level + " XP: " + experience;
+            return "Name: " + name + "\nType: " + type + "\nLevel: " + level + "\nXP: " 
+                + experience + "\nRace: " + race +"\nEquipped weapon: " + ListEquipment[0].Name 
+                + "\nEquipped amor: " + ListEquipment[1].Name;
         }
 
         public string ShowInformation()
