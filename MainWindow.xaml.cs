@@ -16,6 +16,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Data;
 
 namespace FirstFantasy_BonillaAndres
 {
@@ -163,48 +166,56 @@ namespace FirstFantasy_BonillaAndres
             {
                 Axe axe = new Axe(9);
                 myCharacter.Inventory.Add(axe);
+                checkAxe.IsChecked = false;
             }
 
             if (checkHelmet.IsChecked == true)
             {
                 Helmet helmet = new Helmet(3);
                 myCharacter.Inventory.Add(helmet);
+                checkHelmet.IsChecked = false;
             }
 
             if (checkKnife.IsChecked == true)
             {
                 knife knife = new knife(5);
                 myCharacter.Inventory.Add(knife);
+                checkKnife.IsChecked = false;
             }
 
             if (checkPant.IsChecked == true)
             {
                 Pant pant = new Pant(2);
                 myCharacter.Inventory.Add(pant);
+                checkPant.IsChecked = false;
             }
 
             if (checkPotion.IsChecked == true)
             {
                 Potion potion = new Potion(10);
                 myCharacter.Inventory.Add(potion);
+                checkPotion.IsChecked = false;
             }
 
             if (checkShirt.IsChecked == true)
             {
                 Shirt shirt = new Shirt(4);
                 myCharacter.Inventory.Add(shirt);
+                checkShirt.IsChecked = false;
             }
 
             if (checkStaff.IsChecked == true)
             {
                 Staff staff = new Staff(8);
                 myCharacter.Inventory.Add(staff);
+                checkStaff.IsChecked = false;
             }
 
             if (checkSword.IsChecked == true)
             {
                 Sword sword = new Sword(6);
                 myCharacter.Inventory.Add(sword);
+                checkSword.IsChecked = false;
             }
 
             if(name == "")
@@ -218,19 +229,84 @@ namespace FirstFantasy_BonillaAndres
                 
                 var listAllCharacters = listCharacters.ListAllCharacters;
                 listAllCharacters.Add(myCharacter);
-                int count = 1;
-                var text = "";
-                foreach (Character w in listAllCharacters)
-                {
-                    text += count + "." + w.Name + ":" + w.Type + "\n";
-                    count += 1;
-                }
-                txtOutput.Text = text;
+                txtName.Text = null;
+                nullListCharacter();
+                
             }
             
         }
 
+        private void lvDataBinding_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var var2 = lvDataBinding.SelectedIndex;
+            var count = lvDataBinding.Items.Count;
+            if (count != 0)
+            {
+                var listAllCharacters = listCharacters.ListAllCharacters;
+                txtName1.Text = listAllCharacters[var2].Name;
+                txtType.Text = listAllCharacters[var2].Type;
+                txtRace.Text = listAllCharacters[var2].Race;
+                txtEquippedWeapon.Text = listAllCharacters[var2].ListEquipment[0].Name;
+                txtEquippedAmor.Text = listAllCharacters[var2].ListEquipment[1].Name;
+                txtId.Text = (var2 + 1).ToString();
+                var text = "";
+                int countId = 1;
+                foreach (Weapon w in listAllCharacters[var2].Inventory)
+                {
+                    text += countId + ". " + w.Name + "\n";
+                    countId += 1;
+                }
+                txtInventory.Text = text;
+            }
+            
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtIdCharacter.Text != "" && txtIdEquipment.Text != "")
+            {
+                var listAllCharacters = listCharacters.ListAllCharacters;
+                int idCharacter = Int32.Parse(txtIdCharacter.Text) - 1;
+                int idEquipment = Int32.Parse(txtIdEquipment.Text) - 1;
+                var listTemporal = listAllCharacters[idCharacter].Inventory[idEquipment];
+                if (listAllCharacters[idCharacter].Inventory[idEquipment].Type == "Weapon")
+                {
+                    listAllCharacters[idCharacter].Inventory[idEquipment] = listAllCharacters[idCharacter].ListEquipment[0];
+                    listAllCharacters[idCharacter].ListEquipment[0] = listTemporal;
+                    txtIdCharacter.Text = null;
+                    txtIdEquipment.Text = null;
+                    nullListCharacter();
+                    MessageBox.Show("Successful Change");
 
+                }
+                else if (listAllCharacters[idCharacter].Inventory[idEquipment].Type == "Amor")
+                {
+                    listAllCharacters[idCharacter].Inventory[idEquipment] = listAllCharacters[idCharacter].ListEquipment[1];
+                    listAllCharacters[idCharacter].ListEquipment[1] = listTemporal;
+                    txtIdCharacter.Text = null;
+                    txtIdEquipment.Text = null;
+                    nullListCharacter();
+                    MessageBox.Show("Successful Change");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Id Character or Id Equipment Empty");
+            }
+        }
+
+        public void nullListCharacter()
+        {
+            var listAllCharacters = listCharacters.ListAllCharacters;
+            txtName1.Text = null;
+            txtType.Text = null;
+            txtRace.Text = null;
+            txtEquippedWeapon.Text = null;
+            txtEquippedAmor.Text = null;
+            txtInventory.Text = null;
+            txtId.Text = null;
+            lvDataBinding.ItemsSource = null;
+            lvDataBinding.ItemsSource = listAllCharacters;
+        }
     }
 }

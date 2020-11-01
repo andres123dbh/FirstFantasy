@@ -5,20 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FirstFantasy_BonillaAndres"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock Name="txtOutput" HorizontalAlignment="Left" Height="247" Margin="438,119,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Background="#FFFFD3D3"/>
-        <ComboBox Name="CboxCharacter" HorizontalAlignment="Left" Margin="94,83,0,0" VerticalAlignment="Top" Width="120">
+        Title="MainWindow" Height="469" Width="800">
+    <Grid Background="#FFFFFDD6">
+        <Rectangle HorizontalAlignment="Left" Height="252" Margin="34,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="346" Fill="#FFFFB7B7"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="365" Margin="393,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="372" Fill="#FFFFB7B7"/>
+
+        <ComboBox x:Name="CboxCharacter" HorizontalAlignment="Left" Margin="102,121,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Select a type" IsSelected="True"/>
             <ComboBoxItem Content="Cleric"/>
             <ComboBoxItem Content="Fighter"/>
             <ComboBoxItem Content="Rouge"/>
             <ComboBoxItem Content="Wizard"/>
         </ComboBox>
-        <Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="94,242,0,0" VerticalAlignment="Top" Width="120" Click="btnCreate_Click"/>
-        <TextBox Name="txtName" HorizontalAlignment="Left" Margin="94,51,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="47,45,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="CboxRace" HorizontalAlignment="Left" Margin="234,83,0,0" VerticalAlignment="Top" Width="120">
+        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="102,280,0,0" VerticalAlignment="Top" Width="120" Click="btnCreate_Click"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="102,89,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="58,83,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CboxRace" HorizontalAlignment="Left" Margin="242,121,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Select a Race" IsSelected="True"/>
             <ComboBoxItem Content="Dwarf"/>
             <ComboBoxItem Content="Elf"/>
@@ -26,8 +29,8 @@
             <ComboBoxItem Content="Human"/>
             <ComboBoxItem Content="Orc"/>
         </ComboBox>
-        <Label Content="Inventory" HorizontalAlignment="Left" Margin="29,154,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="CboxWeapon" HorizontalAlignment="Left" Margin="94,116,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Inventory" HorizontalAlignment="Left" Margin="46,192,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CboxWeapon" HorizontalAlignment="Left" Margin="102,154,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Select a Weapon" IsSelected="True"/>
             <ComboBoxItem Content="Axe"/>
             <ComboBoxItem Content="Sword"/>
@@ -35,21 +38,59 @@
             <ComboBoxItem Content="Staff"/>
             <ComboBoxItem Content="knife"/>
         </ComboBox>
-        <ComboBox Name="CboxAmor" HorizontalAlignment="Left" Margin="234,116,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox x:Name="CboxAmor" HorizontalAlignment="Left" Margin="242,154,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Select a Armor" IsSelected="True"/>
             <ComboBoxItem Content="Helmet"/>
             <ComboBoxItem Content="Shirt"/>
             <ComboBoxItem Content="Pant"/>
         </ComboBox>
-        <CheckBox Name="checkAxe" Content="Axe" HorizontalAlignment="Left" Margin="98,160,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="checkKnife" Content="knife" HorizontalAlignment="Left" Margin="170,160,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="checkStaff" Content="Staff" HorizontalAlignment="Left" Margin="98,220,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="checkPotion" Content="Potion" HorizontalAlignment="Left" Margin="98,200,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="checkSword" Content="Sword" HorizontalAlignment="Left" Margin="98,180,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="checkPant" Content="Pant" HorizontalAlignment="Left" Margin="170,220,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="checkShirt" Content="Shirt" HorizontalAlignment="Left" Margin="170,200,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="checkHelmet" Content="Helmet" HorizontalAlignment="Left" Margin="170,180,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkAxe" Content="Axe" HorizontalAlignment="Left" Margin="106,198,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkKnife" Content="knife" HorizontalAlignment="Left" Margin="178,198,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkStaff" Content="Staff" HorizontalAlignment="Left" Margin="106,258,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkPotion" Content="Potion" HorizontalAlignment="Left" Margin="106,238,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkSword" Content="Sword" HorizontalAlignment="Left" Margin="106,218,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkPant" Content="Pant" HorizontalAlignment="Left" Margin="178,258,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkShirt" Content="Shirt" HorizontalAlignment="Left" Margin="178,238,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkHelmet" Content="Helmet" HorizontalAlignment="Left" Margin="178,218,0,0" VerticalAlignment="Top"/>
 
+        <ListView Margin="406,109,262,31" x:Name="lvDataBinding" SelectionChanged="lvDataBinding_SelectionChanged" RenderTransformOrigin="0.515,0.5" BorderBrush="#FF020202">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Name}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox x:Name="txtName1" HorizontalAlignment="Left" Margin="612,106,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Height="34" Margin="566,101,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txtType" HorizontalAlignment="Left" Margin="612,135,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Class:" HorizontalAlignment="Left" Height="34" Margin="570,129,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txtRace" HorizontalAlignment="Left" Margin="612,161,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Race:" HorizontalAlignment="Left" Height="34" Margin="572,155,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txtEquippedWeapon" HorizontalAlignment="Left" Margin="612,197,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtEquippedAmor" HorizontalAlignment="Left" Margin="612,235,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Equipped" HorizontalAlignment="Left" Height="34" Margin="548,175,0,0" VerticalAlignment="Top" Width="62"/>
+        <Label Content="weapon:" HorizontalAlignment="Left" Height="34" Margin="554,193,0,0" VerticalAlignment="Top" Width="62"/>
+        <Label Content="Equipped" HorizontalAlignment="Left" Height="34" Margin="548,213,0,0" VerticalAlignment="Top" Width="62"/>
+        <Label Content="Amor:" HorizontalAlignment="Left" Height="34" Margin="566,230,0,0" VerticalAlignment="Top" Width="62"/>
+        <TextBlock x:Name="txtInventory" HorizontalAlignment="Left" Height="134" Margin="616,266,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Background="#FFD7F9B4"/>
+        <Label Content="Inventory:" HorizontalAlignment="Left" Height="34" Margin="548,257,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label Content="Character:" HorizontalAlignment="Left" Margin="406,84,0,0" VerticalAlignment="Top" Width="116" Background="#FFD7F9B4" BorderBrush="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="26" Margin="406,84,0,0" Stroke="Black" VerticalAlignment="Top" Width="116"/>
+        <Label Content="First Fantasy" HorizontalAlignment="Left" Height="41" Margin="313,4,0,0" VerticalAlignment="Top" Width="139" FontSize="24"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="612,84,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="17"/>
+        <Label Content="ID:" HorizontalAlignment="Left" Height="34" Margin="584,79,0,0" VerticalAlignment="Top" Width="60"/>
+        <Rectangle HorizontalAlignment="Left" Height="105" Margin="34,318,0,0" Stroke="Black" VerticalAlignment="Top" Width="346" Fill="#FFFFB7B7"/>
+        <Label Content="Create Character" HorizontalAlignment="Left" Margin="58,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="Characters" HorizontalAlignment="Left" Margin="404,55,0,0" VerticalAlignment="Top"/>
+        <Label Content="Change Equipment" HorizontalAlignment="Left" Margin="51,319,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtIdCharacter" HorizontalAlignment="Left" Margin="132,352,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="17"/>
+        <Label Content="ID Character:" HorizontalAlignment="Left" Height="34" Margin="53,345,0,0" VerticalAlignment="Top" Width="88"/>
+        <Label Content="ID Equipment" HorizontalAlignment="Left" Height="34" Margin="49,377,0,0" VerticalAlignment="Top" Width="88"/>
+        <Label Content="in inventory:" HorizontalAlignment="Left" Height="34" Margin="57,389,0,0" VerticalAlignment="Top" Width="88"/>
+        <TextBox Name="txtIdEquipment" HorizontalAlignment="Left" Margin="132,388,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="17"/>
+        <Button Content="Change" HorizontalAlignment="Left" Margin="236,368,0,0" VerticalAlignment="Top" Width="88" Click="Button_Click"/>
 
     </Grid>
 </Window>
